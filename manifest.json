@@ -1,0 +1,19 @@
+{
+  "name": "Embalses de España hoy",
+  "short_name": "Embalses",
+  "description": "Reserva de agua de España por cuencas y embalses, comparada con hace un año y con la media de diez años.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#1f78b4",
+  "theme_color": "#1f78b4",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

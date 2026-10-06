@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Embalses de España hoy — Reserva de agua por cuencas y pantanos</title>
+<meta name="description" content="Cómo están los embalses de España hoy: porcentaje de agua embalsada, comparación con hace un año y con la media de diez años, por cuencas y pantano a pantano. Datos oficiales del MITECO, actualizados cada semana.">
+<link rel="canonical" href="https://adrianezd.github.io/embalses-hoy/">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1f78b4">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Embalses de España hoy">
+<meta property="og:description" content="La reserva de agua por cuencas y pantanos, con datos oficiales del MITECO.">
+<meta property="og:url" content="https://adrianezd.github.io/embalses-hoy/">
+<meta property="og:locale" content="es_ES">
+<link rel="stylesheet" href="style.css">
+<style>:root { --accent: #1f78b4; }</style>
+<!-- seo -->
+<meta name="keywords" content="embalses españa hoy, reserva hídrica, pantanos, nivel embalses, cuencas hidrográficas, sequía">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="adrianezd">
+<meta property="og:site_name" content="Embalses de España hoy">
+<meta property="og:image" content="https://adrianezd.github.io/embalses-hoy/favicon.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Embalses de España hoy">
+<meta name="twitter:description" content="Cómo están los embalses de España hoy: reserva de agua por cuencas y pantanos, frente a hace un año y a la media de diez años.">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Embalses de España hoy","url":"https://adrianezd.github.io/embalses-hoy/","description":"Cómo están los embalses de España hoy: reserva de agua por cuencas y pantanos, frente a hace un año y a la media de diez años.","inLanguage":"es","applicationCategory":"ReferenceApplication","operatingSystem":"Any","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"adrianezd"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cada cuánto se actualizan los datos?","acceptedAnswer":{"@type":"Answer","text":"Cada semana. El MITECO publica el boletín hidrológico los martes y la web se actualiza ese mismo día."}},{"@type":"Question","name":"¿De dónde salen los datos?","acceptedAnswer":{"@type":"Answer","text":"Del boletín hidrológico oficial del Ministerio para la Transición Ecológica."}},{"@type":"Question","name":"¿Qué significa la media de diez años?","acceptedAnswer":{"@type":"Answer","text":"Es la reserva media que había en la misma semana durante los últimos diez años. Sirve para saber si este año va mejor o peor de lo normal."}}]}]}</script>
+<!-- /seo -->
+</head>
+<body>
+<header class="top">
+  <h1>💧 Embalses de España hoy</h1>
+  <p class="sub" id="fecha">Cargando datos del MITECO…</p>
+</header>
+<main>
+  <section class="tarjeta" style="text-align:center">
+    <div class="etq">Reserva total</div>
+    <div class="grande" id="pct">–</div>
+    <div class="barrita" style="height:14px;margin:10px 0"><div id="barra" style="background:var(--accent)"></div></div>
+    <div class="sub" id="hm3"></div>
+  </section>
+  <section class="cifras">
+    <div class="tarjeta"><div class="etq">Hace un año</div><b id="anyo">–</b><span id="anyoDif"></span></div>
+    <div class="tarjeta"><div class="etq">Media de 10 años</div><b id="media">–</b><span id="mediaDif"></span></div>
+    <div class="tarjeta"><div class="etq">Esta semana</div><b id="semana">–</b><span>hm³</span></div>
+  </section>
+  <section class="tarjeta">
+    <h2>Últimos diez años</h2>
+    <svg id="grafica" viewBox="0 0 700 220" style="width:100%;height:auto" role="img" aria-label="Evolución de la reserva de agua en los últimos diez años"></svg>
+  </section>
+  <section class="tarjeta">
+    <h2>Por cuencas</h2>
+    <div class="tabla-scroll"><table id="cuencas"></table></div>
+  </section>
+  <section class="tarjeta">
+    <h2>Pantano a pantano</h2>
+    <div class="form" style="margin-bottom:10px">
+      <input id="buscar" placeholder="Busca un embalse" autocomplete="off">
+      <select id="filtroCuenca"><option value="">Todas las cuencas</option></select>
+    </div>
+    <div class="tabla-scroll"><table id="embalses"></table></div>
+  </section>
+  <section class="texto">
+    <h2>Sobre los datos</h2>
+    <p>Los datos salen de la base oficial del Boletín Hidrológico semanal del Ministerio para la Transición Ecológica (MITECO), que se publica los martes. La página se actualiza sola cuando sale un boletín nuevo.</p>
+    <p>hm³ son hectómetros cúbicos: mil millones de litros. La media de diez años compara con la misma semana de cada uno de los diez años anteriores.</p>
+  </section>
+</main>
+<footer>Fuente: <a href="https://www.miteco.gob.es/es/agua/temas/evaluacion-de-los-recursos-hidricos/boletin-hidrologico.html" rel="noopener">Boletín Hidrológico, MITECO</a></footer>
+<!-- red -->
+<section class="seo-faq" style="max-width:760px;margin:0 auto;padding:8px 16px;font-size:.92rem;opacity:.85"><h2 style="font-size:1rem">Preguntas frecuentes</h2><details><summary>¿Cada cuánto se actualizan los datos?</summary><p>Cada semana. El MITECO publica el boletín hidrológico los martes y la web se actualiza ese mismo día.</p></details><details><summary>¿De dónde salen los datos?</summary><p>Del boletín hidrológico oficial del Ministerio para la Transición Ecológica.</p></details><details><summary>¿Qué significa la media de diez años?</summary><p>Es la reserva media que había en la misma semana durante los últimos diez años. Sirve para saber si este año va mejor o peor de lo normal.</p></details></section>
+<nav class="seo-red" style="max-width:760px;margin:0 auto;padding:8px 16px 28px;font-size:.85rem;opacity:.75;text-align:center">Más webs gratis: <a href="https://adrianezd.github.io/precio-luz-hoy/">Precio de la luz</a> · <a href="https://adrianezd.github.io/sueldo-neto/">Sueldo neto</a> · <a href="https://adrianezd.github.io/la-previa/">La Previa</a> · <a href="https://adrianezd.github.io/brisca-maldita/">Brisca Maldita</a> · <a href="https://adrianezd.github.io/embalses-hoy/">Embalses hoy</a> · <a href="https://adrianezd.github.io/calendario-laboral/">Calendario laboral</a> · <a href="https://adrianezd.github.io/alquilar-o-comprar/">Alquilar o comprar</a> · <a href="https://adrianezd.github.io/coste-viaje/">Coste del viaje</a> · <a href="https://adrianezd.github.io/pueblodle/">Pueblodle</a> · <a href="https://adrianezd.github.io/grid-laliga/">Grid LaLiga</a> · <a href="https://adrianezd.github.io/quien-lo-dijo/">Quién lo dijo</a> · <a href="https://adrianezd.github.io/el-mentiroso/">El Mentiroso</a></nav>
+<!-- /red -->
+<script src="script.js"></script>
+</body>
+</html>
